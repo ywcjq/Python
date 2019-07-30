@@ -1,0 +1,46 @@
+number = []
+count = 0
+sum = 0
+lowest = highest = 0
+
+while True:
+    line = input("enter a number or Enter to finish:")
+    if line:
+        try:
+            num = int(line)
+        except ValueError:
+            continue
+        number.append(num)     
+        count += 1
+        sum += num
+        if count == 1: lowest = highest = num
+        if num < lowest: lowest = num
+        if num > highest: highest = num    
+    else:
+        break
+        
+print("numbers:",number)
+
+if count:
+    print("count=",count,"sum=",sum,"lowest=",lowest,"highest=",highest,"mean=",sum/count)
+
+i = j = 0
+
+while i < len(number):
+    j = i + 1
+    while j < len(number):
+        if number[j] < number[i]:
+            tmp = number[i]
+            number[i] = number[j]
+            number[j] = tmp
+        j += 1
+    i += 1
+
+print("the new number is:",number)         
+
+if len(number)//2 == len(number)/2:
+    zws = (number[len(number)//2] + number[len(number)//2 - 1])/2
+else:
+    zws = number[len(number)//2]
+
+print("zws:",zws)
