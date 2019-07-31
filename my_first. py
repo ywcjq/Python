@@ -39,8 +39,8 @@ while i < len(number):
 print("the new number is:",number)         
 
 if len(number)//2 == len(number)/2:
-    zws = (number[len(number)//2] + number[len(number)//2 - 1])/2
+    median = (number[len(number)//2] + number[len(number)//2 - 1])/2
 else:
-    zws = number[len(number)//2]
+    median = number[len(number)//2]
 
-print("zws:",zws)
+print("median:",median)
